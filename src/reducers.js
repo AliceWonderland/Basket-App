@@ -85,4 +85,4 @@ export const basketApp = combineReducers({
 	visibilityFilter
 });
 
-// export default { basketApp, basketItems, visibilityFilter };
+export default { basketApp, basketItems, visibilityFilter };

@@ -28,4 +28,4 @@ Browse to http://localhost:3000/ to view.
 
 
 ## Additional
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). As part of this task, I checked into Create-React-App. A great entry-point into building React apps.
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). As part of this task, I checked into Create-React-App to see how Facebook recommends setting up a simple mini-app. A great entry-point into building React apps.
