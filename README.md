@@ -20,6 +20,7 @@ Browse to http://localhost:3000/ to view.
 
 ### To Run SASS
 `npm run build-css` (compile sass)
+
 `npm run watch-css` (dev mode continuous update)
 
 ### To Build Production Files
