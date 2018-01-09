@@ -18,8 +18,5 @@ To Run SASS
 `npm run watch-css` (dev mode continuous update)
 
 
-## Create React App
-This project was created with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+## Additional
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). As part of this task, I checked into Create-React-App. A great entry-point into building React apps.
