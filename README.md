@@ -1,7 +1,11 @@
+
+
 # Basket App
 Add groceries to your Basket!
 
 React, Redux, SASS, FontAwesome
+
+[screenshot]: (https://github.com/AliceWonderland/Basket-App/blob/master/public/basket-app.png)
 
 ## Installation
 run `git clone https://github.com/AliceWonderland/Basket-App.git`
