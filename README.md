@@ -5,21 +5,25 @@ Add groceries to your Basket!
 
 React, Redux, SASS, FontAwesome
 
-[screenshot]: (https://github.com/AliceWonderland/Basket-App/blob/master/public/basket-app.png)
+![](https://github.com/AliceWonderland/Basket-App/blob/master/public/basket-app.png)
 
 ## Installation
-run `git clone https://github.com/AliceWonderland/Basket-App.git`
-run `npm install`
-run `npm run start`
+Run `git clone https://github.com/AliceWonderland/Basket-App.git`
+
+Run `npm install`
+
+Run `npm run start`
+
 Follow the prompt (if any).
+
 Browse to http://localhost:3000/ to view.
 
-To Run Production Build
-`npm run build`
-
-To Run SASS
+### To Run SASS
 `npm run build-css` (compile sass)
 `npm run watch-css` (dev mode continuous update)
+
+### To Build Production Files
+`npm run build`
 
 
 ## Additional
