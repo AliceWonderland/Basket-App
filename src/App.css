@@ -1,0 +1,94 @@
+@import url(./font-awesome-4.7.0/scss/font-awesome.css);
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center; }
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-header {
+  background-color: #222;
+  height: 186px;
+  padding: 20px;
+  color: white; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+header {
+  text-align: center; }
+
+nav {
+  border: 1px solid red;
+  width: 50%;
+  align-self: center;
+  margin: 30px; }
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; }
+
+main > div {
+  display: flex;
+  flex-direction: column;
+  width: 30%; }
+
+ul {
+  padding: 0px;
+  width: 100%;
+  margin: 0px; }
+
+li {
+  list-style: none;
+  margin: 7px 0px;
+  padding: 10px; }
+
+li:nth-child(odd) {
+  background: #f9f9f9; }
+
+li:nth-child(even) {
+  background: #efefef; }
+
+ul.Groceries li:before {
+  font-family: FontAwesome;
+  content: "\f196 \0000a0";
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold; }
+
+ul.Groceries li:hover:before {
+  font-family: FontAwesome;
+  content: "\f0fe \0000a0";
+  color: #f00;
+  font-size: 1.2em;
+  font-weight: bold; }
+
+ul.Basket li:before {
+  font-family: FontAwesome;
+  content: "\f147 \0000a0";
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold; }
+
+ul.Basket li:hover:before {
+  font-family: FontAwesome;
+  content: "\f147 \0000a0";
+  color: #f00;
+  font-size: 1.2em;
+  font-weight: bold; }
+
+i.fa.fa-shopping-basket.fa-6 {
+  font-size: 8em; }
