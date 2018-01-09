@@ -1,12 +1,9 @@
-	// import React, { Component } from 'react';
-	// import logo from './logo.svg';
-	//
-
-
 import React, { Component } from 'react';
 import Footer from './Footer'
 import AddBasketItem from './AddBasketItem'
-import VisibleTodoList from './VisibleTodoList'
+import LiveBasketList from './LiveBasketList'
+
+// import logo from './logo.svg';
 
 import './App.css';
 
@@ -15,14 +12,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-			categories: [
-				{id:1, name:'Fruit'},
-				{id:2, name:'Vegetable'},
-				{id:3, name:'Dairy'},
-				{id:4, name:'Meat'},
-				{id:5, name:'Grain'}
-			],
-
+			categories: [],
 			item: [
 				{id:1, name:'Strawberry', categoryId:1},
 				{id:2, name:'Blueberry', categoryId:1},
@@ -48,14 +38,7 @@ class App extends Component {
 				{id:18, name:'Pasta', categoryId:5},
 				{id:19, name:'Bread', categoryId:5}
 			],
-
-			list: [
-				{id:1, name:'Strawberry', count:1, bought:false},
-				{id:6, name:'Carrot', count:1, bought:false},
-				{id:10, name:'Eggs', count:1, bought:false},
-				{id:13, name:'Chicken', count:1, bought:false},
-				{id:17, name:'Rice', count:1, bought:false}
-			]
+			list: []
         };
 
 		this.addToBasket = this.addToBasket.bind(this);
@@ -75,72 +58,57 @@ class App extends Component {
 
 		for(let item in list){
 			//using == to ignore type
-			if(list[item].id == itemToAdd.id){
+			if(list[item].id === Number(itemToAdd.id)){
 				list[item].count++
 			}
 		}
 
-		console.log(list.hasOwnProperty('id'), itemToAdd.id, e.target.name);
+		// console.log(list.hasOwnProperty('id'), itemToAdd.id, e.target.name);
 
 		let newItem = {id: itemToAdd.id, name: itemToAdd.name, count:1, bought:false};
 		this.setState({ list: [...this.state.list, newItem]});
 
-		console.log(itemToAdd, this.state.list);
+		// console.log(itemToAdd, this.state.list);
 	}
 
     render() {
-		// const categories = this.state.categories;
-		// const items = this.state.item;
-		// const list = this.state.list;
+		const items = this.state.item;
         return (
             <div className="App">
-
-				<div>
-					<AddBasketItem />
-					<VisibleTodoList />
-					<Footer />
-				</div>
-
-
-                <header className="App-header">
+				<header className="App-header">
 					<i className="fa fa-shopping-basket fa-6" aria-hidden="true"></i>
-                    <h1 className="App-title">Hello, Basket!</h1>
-                </header>
+					<h1 className="App-title">Hello, Basket!</h1>
+				</header>
+
 				<nav>
-					<form><input type="text" name="filterIt" value="filter for e.g. Apple" /></form>
+					<form><input type="text" name="filterIt" value="filter for e.g. Apple refresh onChange" onChange={this.addToBasket} /></form>
+					<AddBasketItem />
 				</nav>
-                {/*<main>*/}
-                    {/*<div>*/}
-                        {/*<h3>Groceries</h3>*/}
-                        {/*<ul className="Groceries">*/}
-							{/*{*/}
-								{/*items.map(item => {*/}
-									{/*return (*/}
 
-                                      {/*<li key={item.id} id={item.id} name={item.name} onClick={this.addToBasket}>{item.name}</li>*/}
+                <main>
+                    <div>
+                        <h3>Groceries</h3>
+                        <ul className="Groceries">
+							{
+								items.map(item => {
+									return (
 
-									{/*);*/}
-								{/*})*/}
-							{/*}*/}
-                        {/*</ul>*/}
-                    {/*</div>*/}
+									  <li key={item.id} id={item.id} name={item.name} onClick={this.addToBasket}>{item.name}</li>
 
-                    {/*<div>*/}
-                        {/*<h3>Basket</h3>*/}
-                        {/*<ul className="Basket">*/}
-							{/*{*/}
-								{/*list.map(item => {*/}
-									{/*return (*/}
+									);
+								})
+							}
+                        </ul>
+                    </div>
 
-                                      {/*<li key={item.id} id={item.id} name={item.name}>{item.count} {item.name}</li>*/}
+                    <div>
+                        <h3>Basket</h3>
+						<LiveBasketList />
+                    </div>
 
-									{/*);*/}
-								{/*})*/}
-							{/*}*/}
-                        {/*</ul>*/}
-                    {/*</div>*/}
+                </main>
 
-                {/*</main>*/}
+				<Footer />
             </div>
         );
     }
@@ -155,7 +123,6 @@ export default App;
 	//   <div>
 	// 	  <AddTodo />
 	// 	  <div>
-	// 		  <VisibleTodoList />
 	// 		  <VisibleTodoList />
 	// 	  </div>
 	// 	  <Footer />

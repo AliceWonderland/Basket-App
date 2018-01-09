@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { toggleBasketItem } from './actions';
 import BasketList from './BasketList';
 
-const getVisibleTodos = (basketItems, filter) => {
+const getBasketList = (basketItems, filter) => {
 	switch (filter) {
 		case 'SHOW_COMPLETED':
 			return basketItems.filter(t => t.bought);
@@ -15,9 +15,8 @@ const getVisibleTodos = (basketItems, filter) => {
 };
 
 const mapStateToProps = state => {
-	console.log('test',state.basketItems.list);
 	return {
-		basketItems: getVisibleTodos(state.basketItems.list, state.visibilityFilter)
+		basketItems: getBasketList(state.basketItems.list, state.visibilityFilter)
 	}
 };
 
@@ -29,9 +28,9 @@ const mapDispatchToProps = dispatch => {
 	}
 };
 
-const VisibleTodoList = connect(
+const LiveBasketList = connect(
   mapStateToProps,
   mapDispatchToProps
 )(BasketList);
 
-export default VisibleTodoList;
+export default LiveBasketList;

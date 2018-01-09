@@ -5,37 +5,40 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+  }
 
-.App-header {
-  background-color: #222;
-  height: 186px;
-  padding: 20px;
-  color: white;
-}
+  .App-header {
+    background-color: #222;
+    height: 186px;
+    padding: 20px;
+    color: white;
+  }
 
-.App-title {
-  font-size: 1.5em;
-}
+  .App-title {
+    font-size: 1.5em;
+  }
 
-.App-intro {
-  font-size: large;
-}
+  .App-intro {
+    font-size: large;
+  }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 }
-
 
 //Basket styles in global form
 header{
   text-align: center;
+
+  i.fa.fa-shopping-basket.fa-6 {
+    font-size: 8em;
+  }
 }
 
 nav{
@@ -43,84 +46,94 @@ nav{
   width: 50%;
   align-self: center;
   margin: 30px;
+  background-color:pink;
+
+  form:first-child{
+    input:first-child{
+      width: 200px;
+    }
+  }
 }
 
 main{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly
-}
+  justify-content: space-evenly;
 
-main > div{
-  display: flex;
-  flex-direction: column;
-  width: 30%;
+  div{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
 }
 
 ul{
   padding: 0px;
   width: 100%;
   margin: 0px;
+
+  li{
+    list-style: none;
+    margin: 7px 0px;
+    padding: 10px;
+  }
+
+  li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+
+  li:nth-child(even) {
+    background: #efefef;
+  }
 }
 
 ul.Groceries{
-  //width: 30%;
+  li:before {
+    font-family: FontAwesome;
+    content: "\f196 \0000a0";
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  li:hover:before {
+    font-family: FontAwesome;
+    content: "\f0fe \0000a0";
+    color: #f00;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
 }
 
-ul.Basket{
-  //width: 25%;
+ul.Basket {
+  li:before {
+    font-family: FontAwesome;
+    content: "\f147 \0000a0";
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  li:hover:before {
+    font-family: FontAwesome;
+    content: "\f147 \0000a0";
+    color: #f00;
+    font-size: 1.2em;
+    font-weight: bold;
+
+  }
 }
 
-li{
-  list-style: none;
-  margin: 7px 0px;
-  padding: 10px;
-}
-
-li:nth-child(odd) {
-  background: #f9f9f9;
-}
-
-li:nth-child(even) {
-  background: #efefef;
-}
-
-ul.Groceries li{
-
-}
-
-ul.Groceries li:before {
-  font-family: FontAwesome;
-  content: "\f196 \0000a0";
+footer{
+  height: 150px;
+  background-color: #222;
+  margin: 20px 0 0 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
-  font-size: 1.2em;
-  font-weight: bold;
-}
 
-ul.Groceries li:hover:before {
-  font-family: FontAwesome;
-  content: "\f0fe \0000a0";
-  color: #f00;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-ul.Basket li:before {
-  font-family: FontAwesome;
-  content: "\f147 \0000a0";
-  color: #fff;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-ul.Basket li:hover:before {
-  font-family: FontAwesome;
-  content: "\f147 \0000a0";
-  color: #f00;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-i.fa.fa-shopping-basket.fa-6 {
-  font-size: 8em;
+  a{
+    color: #fff;
+  }
 }

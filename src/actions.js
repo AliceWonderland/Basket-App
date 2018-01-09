@@ -21,3 +21,4 @@ export const setVisibilityFilter = filter => {
 	}
 };
 
+// export default { addBasketItem, toggleBasketItem, setVisibilityFilter };

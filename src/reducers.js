@@ -56,11 +56,12 @@ export const basketItems = (state = initialState, action) => {
 				{
 					id: action.id,
 					name: action.name,
+					count: action.count,
 					bought: false
 				}
 			];
 		case 'TOGGLE_BASKETITEM':
-			return state.map(basketItem =>
+			return state.list.map(basketItem =>
 			  (basketItem.id === action.id)
 				? {...basketItem, bought: !basketItem.bought}
 				: basketItem
@@ -83,4 +84,5 @@ export const basketApp = combineReducers({
 	basketItems,
 	visibilityFilter
 });
-export default {basketApp, basketItems, visibilityFilter};
+
+// export default { basketApp, basketItems, visibilityFilter };
