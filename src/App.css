@@ -33,9 +33,15 @@ nav {
   width: 50%;
   align-self: center;
   margin: 30px;
-  background-color: pink; }
-  nav form:first-child input:first-child {
-    width: 200px; }
+  background-color: pink;
+  padding: 20px;
+  border-radius: 5px; }
+  nav form:first-child {
+    width: 50%; }
+    nav form:first-child input[type="text"] {
+      border: 0px;
+      padding: 10px;
+      width: 100%; }
 
 main {
   display: flex;
@@ -48,6 +54,11 @@ main {
   main header {
     display: flex;
     justify-content: space-between; }
+    main header .clearBasket {
+      color: red;
+      opacity: .3; }
+    main header .clearBasket:hover {
+      opacity: 1; }
 
 ul {
   padding: 0px;
@@ -72,7 +83,7 @@ ul.Groceries li:before {
 ul.Groceries li:hover:before {
   font-family: FontAwesome;
   content: "\f0fe \0000a0";
-  color: #f00;
+  color: green;
   font-size: 1.2em;
   font-weight: bold; }
 
@@ -85,7 +96,7 @@ ul.Basket li:before {
 
 ul.Basket li:hover:before {
   font-family: FontAwesome;
-  content: "\f147 \0000a0";
+  content: "\f146 \0000a0";
   color: #f00;
   font-size: 1.2em;
   font-weight: bold; }

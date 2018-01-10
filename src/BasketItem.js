@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 const BasketItem = ({ onClick, bought, name, count }) => (
   <li
 	onClick={onClick}
-	style={ {
-		textDecoration: bought ? 'line-through' : 'none'
-	}}
+	style={ { textDecoration: bought ? 'line-through' : 'none' }}
   >
-  {count} {name}
+  	{count} {name}
   </li>
 );
 

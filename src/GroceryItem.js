@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 const GroceryItem = ({ onClick, bought, name, count }) => (
   <li
 	onClick={onClick}
-	style={ {
-		textDecoration: bought ? 'line-through' : 'none'
-	}}
+	style={{ textDecoration: bought ? 'line-through' : 'none' }}
   >
 	  {count} {name}
   </li>

@@ -58,8 +58,6 @@ export const groceryItems = (state = initialState.item, action) => {
 export const basketItems = (state = initialState, action) => {
 	switch (action.type) {
 		case 'ADD_BASKETITEM':
-			console.log('add item', action);
-
 			let itemExists=false;
 
 			let newBasket = state.list.map(basketItem => {
@@ -96,7 +94,7 @@ export const basketItems = (state = initialState, action) => {
 		case 'CLEAR_BASKETITEMS':
 			return {
 				...state,
-				list: {}
+				list: []
 			};
 		default:
 			return state;

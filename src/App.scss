@@ -47,10 +47,16 @@ nav{
   align-self: center;
   margin: 30px;
   background-color:pink;
+  padding: 20px;
+  border-radius: 5px;
 
   form:first-child{
-    input:first-child{
-      width: 200px;
+    width: 50%;
+
+    input[type="text"] {
+      border: 0px;
+      padding: 10px;
+      width: 100%;
     }
   }
 }
@@ -64,12 +70,18 @@ main{
     display: flex;
     flex-direction: column;
     width: 30%;
-
-
   }
   header{
     display: flex;
     justify-content: space-between;
+
+    .clearBasket{
+      color: red;
+      opacity: .3;
+    }
+    .clearBasket:hover{
+      opacity: 1;
+    }
   }
 }
 
@@ -105,7 +117,7 @@ ul.Groceries{
   li:hover:before {
     font-family: FontAwesome;
     content: "\f0fe \0000a0";
-    color: #f00;
+    color: green;
     font-size: 1.2em;
     font-weight: bold;
   }
@@ -122,11 +134,10 @@ ul.Basket {
 
   li:hover:before {
     font-family: FontAwesome;
-    content: "\f147 \0000a0";
+    content: "\f146 \0000a0";
     color: #f00;
     font-size: 1.2em;
     font-weight: bold;
-
   }
 }
 

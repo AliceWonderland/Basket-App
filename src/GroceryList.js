@@ -6,9 +6,9 @@ const GroceryList = ({ groceryItems, onTodoClick }) => {
 	return (
 	  <div>
 		  <header>
-			  <h3>Groceries</h3>
+			  <h3><i className="fa fa-leaf" aria-hidden="true"></i> Groceries</h3>
 		  </header>
-		  <ul className="Basket">
+		  <ul className="Groceries">
 			  {groceryItems.map(listItem => (
 				<GroceryItem key={listItem.id} {...listItem} onClick={() => onTodoClick(listItem)} />
 			  ))}

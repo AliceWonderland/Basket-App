@@ -9,13 +9,13 @@ const getGroceryList = (groceryItems, filter) => {
 		case 'SHOW_ACTIVE':
 			return groceryItems.filter(t => !t.bought);
 		case 'SHOW_ALL':
+			return groceryItems;
 		default:
 			return groceryItems;
 	}
 };
 
 const mapStateToProps = state => {
-	console.log('glist',state);
 	return {
 		groceryItems: getGroceryList(state.basketItems.item, state.visibilityFilter)
 	}

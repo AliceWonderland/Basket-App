@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleBasketItem } from './actions';
+import { toggleBasketItem, clearBasketItems } from './actions';
 import BasketList from './BasketList';
 
 const getBasketList = (basketItems, filter) => {
@@ -15,7 +15,6 @@ const getBasketList = (basketItems, filter) => {
 };
 
 const mapStateToProps = state => {
-	console.log('blist',state);
 	return {
 		basketItems: getBasketList(state.basketItems.list, state.visibilityFilter)
 	}
@@ -25,6 +24,9 @@ const mapDispatchToProps = dispatch => {
 	return {
 		onTodoClick: id => {
 			dispatch(toggleBasketItem(id))
+		},
+		onClearClick: () => {
+			dispatch(clearBasketItems())
 		}
 	}
 };

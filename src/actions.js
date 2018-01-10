@@ -21,10 +21,9 @@ export const toggleBasketItem = id => {
 	}
 };
 
-export const clearBasketItems = id => {
+export const clearBasketItems = () => {
 	return {
-		type: 'CLEAR_BASKETITEMS',
-		id
+		type: 'CLEAR_BASKETITEMS'
 	}
 };
 
@@ -34,5 +33,3 @@ export const setVisibilityFilter = filter => {
 		filter
 	}
 };
-
-// export default { addBasketItem, toggleBasketItem, clearBasketItems, setVisibilityFilter };
