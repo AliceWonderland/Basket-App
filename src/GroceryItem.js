@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BasketItem = ({ onClick, bought, name, count }) => (
+const GroceryItem = ({ onClick, bought, name, count }) => (
   <li
 	onClick={onClick}
 	style={ {
 		textDecoration: bought ? 'line-through' : 'none'
 	}}
   >
-  {count} {name}
+	  {count} {name}
   </li>
 );
 
-BasketItem.propTypes = {
+GroceryItem.propTypes = {
 	onClick: PropTypes.func.isRequired,
-	bought: PropTypes.bool.isRequired,
+	bought: PropTypes.bool,
 	name: PropTypes.string.isRequired,
-	count: PropTypes.number.isRequired
+	count: PropTypes.number
 };
 
-export default BasketItem;
+export default GroceryItem;

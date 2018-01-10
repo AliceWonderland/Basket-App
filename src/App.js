@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Footer from './Footer'
 import AddBasketItem from './AddBasketItem'
-import LiveBasketList from './LiveBasketList'
+import GroceryListLive from './GroceryListLive'
+import BasketListLive from './BasketListLive'
 // import logo from './logo.svg';
 
 import './App.css';
@@ -64,13 +65,12 @@ class App extends Component {
 
 		let newItem = {id: itemToAdd.id, name: itemToAdd.name, count:1, bought:false};
 		this.setState({ list: [...this.state.list, newItem]});
-
 	}
 
     render() {
-		const items = this.state.item;
         return (
             <div className="App">
+
 				<header className="App-header">
 					<i className="fa fa-shopping-basket fa-6" aria-hidden="true"></i>
 					<h1 className="App-title">Hello, Basket!</h1>
@@ -82,32 +82,28 @@ class App extends Component {
 				</nav>
 
                 <main>
-                    <div>
-                        <h3>Groceries</h3>
-                        <ul className="Groceries">
-							{
-								items.map(item => {
-									return (
+                    {/*<div>*/}
+                        {/*<h3>Groceries</h3>*/}
+                        {/*<ul className="Groceries">*/}
+							{/*{*/}
+								{/*items.map(item => {*/}
+									{/*return (*/}
 
-									  <li key={item.id} id={item.id} name={item.name} onClick={this.addToBasket}>{item.name}</li>
+									  {/*<li key={item.id} id={item.id} name={item.name} onClick={this.addToBasket}>{item.name}</li>*/}
 
-									);
-								})
-							}
-                        </ul>
-                    </div>
+									{/*);*/}
+								{/*})*/}
+							{/*}*/}
+                        {/*</ul>*/}
+                    {/*</div>*/}
 
-                    <div>
-						<header>
-							<h3>Basket</h3>
-							<h3>Clear</h3>
-						</header>
-						<LiveBasketList />
-                    </div>
+					<GroceryListLive />
+					<BasketListLive />
 
                 </main>
 
 				<Footer />
+
             </div>
         );
     }

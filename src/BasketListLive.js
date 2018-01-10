@@ -15,6 +15,7 @@ const getBasketList = (basketItems, filter) => {
 };
 
 const mapStateToProps = state => {
+	console.log('blist',state);
 	return {
 		basketItems: getBasketList(state.basketItems.list, state.visibilityFilter)
 	}
@@ -28,9 +29,9 @@ const mapDispatchToProps = dispatch => {
 	}
 };
 
-const LiveBasketList = connect(
+const BasketListLive = connect(
   mapStateToProps,
   mapDispatchToProps
 )(BasketList);
 
-export default LiveBasketList;
+export default BasketListLive;

@@ -48,19 +48,40 @@ const initialState = {
 	]
 };
 
+export const groceryItems = (state = initialState.item, action) => {
+	switch (action.type){
+		default:
+			return state;
+	}
+};
+
 export const basketItems = (state = initialState, action) => {
 	switch (action.type) {
 		case 'ADD_BASKETITEM':
-			return [
-				...state,
-				{
-					id: action.id,
-					name: action.name,
-					count: action.count,
-					bought: false
-				}
-			];
+			console.log('add item', action);
 
+			let itemExists=false;
+
+			let newBasket = state.list.map(basketItem => {
+				if(basketItem.id === action.item.id){
+					itemExists=true;
+					return {...basketItem, count: basketItem.count+1};
+				}else{
+					return basketItem;
+				}
+			});
+
+			if(itemExists){
+				return {
+					...state,
+					list: newBasket
+				};
+			}else{
+				return {
+					...state,
+					list: [...state.list, {...action.item, count: 1, bought: false}]
+				};
+			}
 		case 'TOGGLE_BASKETITEM':
 			let newList = state.list.map(basketItem =>
 			  (basketItem.id === action.id)
@@ -72,13 +93,11 @@ export const basketItems = (state = initialState, action) => {
 				list: newList
 
 			};
-
-		case 'CLEAR_BASKET':
+		case 'CLEAR_BASKETITEMS':
 			return {
 				...state,
 				list: {}
 			};
-
 		default:
 			return state;
 	}
@@ -94,6 +113,7 @@ export const visibilityFilter = (state = 'SHOW_ALL', action) => {
 };
 
 export const basketApp = combineReducers({
+	groceryItems,
 	basketItems,
 	visibilityFilter
 });
