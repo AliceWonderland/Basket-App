@@ -45,6 +45,9 @@ main {
     display: flex;
     flex-direction: column;
     width: 30%; }
+  main header {
+    display: flex;
+    justify-content: space-between; }
 
 ul {
   padding: 0px;

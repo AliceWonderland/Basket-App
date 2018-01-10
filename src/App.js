@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Footer from './Footer'
 import AddBasketItem from './AddBasketItem'
 import LiveBasketList from './LiveBasketList'
-
 // import logo from './logo.svg';
 
 import './App.css';
@@ -63,12 +62,9 @@ class App extends Component {
 			}
 		}
 
-		// console.log(list.hasOwnProperty('id'), itemToAdd.id, e.target.name);
-
 		let newItem = {id: itemToAdd.id, name: itemToAdd.name, count:1, bought:false};
 		this.setState({ list: [...this.state.list, newItem]});
 
-		// console.log(itemToAdd, this.state.list);
 	}
 
     render() {
@@ -102,7 +98,10 @@ class App extends Component {
                     </div>
 
                     <div>
-                        <h3>Basket</h3>
+						<header>
+							<h3>Basket</h3>
+							<h3>Clear</h3>
+						</header>
 						<LiveBasketList />
                     </div>
 
@@ -115,18 +114,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-	// const App = () => (
-	//   <div>
-	// 	  <AddTodo />
-	// 	  <div>
-	// 		  <VisibleTodoList />
-	// 	  </div>
-	// 	  <Footer />
-	//   </div>
-	// )
-	//
-	// export default App

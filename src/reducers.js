@@ -60,12 +60,25 @@ export const basketItems = (state = initialState, action) => {
 					bought: false
 				}
 			];
+
 		case 'TOGGLE_BASKETITEM':
-			return state.list.map(basketItem =>
+			let newList = state.list.map(basketItem =>
 			  (basketItem.id === action.id)
 				? {...basketItem, bought: !basketItem.bought}
 				: basketItem
 			);
+			return {
+				...state,
+				list: newList
+
+			};
+
+		case 'CLEAR_BASKET':
+			return {
+				...state,
+				list: {}
+			};
+
 		default:
 			return state;
 	}
