@@ -5,6 +5,8 @@ Add groceries to your Basket!
 
 React, Redux, SASS, FontAwesome
 
+http://basket.alicechuang.com/
+
 ![](https://github.com/AliceWonderland/Basket-App/blob/master/public/basket-app.png)
 
 ## Installation
@@ -24,7 +26,12 @@ Browse to http://localhost:3000/ to view.
 `npm run watch-css` (dev mode continuous update)
 
 ### To Build Production Files
-`npm run build`
+`npm run build` to build production files into /build/ folder
+`npm install -g serve`
+`serve -s build`
+To run static server from root
+
+
 
 
 ## Additional
