@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BasketItem from './BasketItem';
+import ListItem from './ListItem';
 
 const BasketList = ({ basketItems, onTodoClick, onClearClick }) => {
 	const isClear = !basketItems.length;
@@ -25,7 +25,7 @@ const BasketList = ({ basketItems, onTodoClick, onClearClick }) => {
 				:
 				<ul className="Basket">
 					{basketItems.map(listItem => (
-						<BasketItem key={listItem.id} {...listItem} onClick={() => onTodoClick(listItem.id)} />
+						<ListItem key={listItem.id} {...listItem} onClick={() => onTodoClick(listItem.id)} />
 					))}
 				</ul>
 			}

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GroceryItem from './GroceryItem';
+import ListItem from './ListItem';
 
 const GroceryList = ({ groceryItems, onTodoClick }) => {
 	return (
@@ -10,7 +10,7 @@ const GroceryList = ({ groceryItems, onTodoClick }) => {
 		  </header>
 		  <ul className="Groceries">
 			  {groceryItems.map(listItem => (
-				<GroceryItem key={listItem.id} {...listItem} onClick={() => onTodoClick(listItem)} />
+				<ListItem key={listItem.id} {...listItem} onClick={() => onTodoClick(listItem)} />
 			  ))}
 		  </ul>
 	  </div>
